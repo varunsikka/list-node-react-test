@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "declaration": false,
+      "noImplicitAny": false,
+      "removeComments": true,
+      "noLib": false,
+      "allowSyntheticDefaultImports": true,
+      "target": "es2017",
+      "sourceMap": true,
+      "incremental": true,
+      "noUnusedLocals": true, /* Report errors on unused locals. */
+      "noImplicitThis": true, /* Raise error on 'this' expressions with an implied 'any' type. */
+      "alwaysStrict": true, /* Parse in strict mode and emit "use strict" for each source file. */
+      "strictNullChecks": false,              /* Enable strict null checks. */
+      "strict": true, /* Enable all strict type-checking options. */
+      "esModuleInterop": true, /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+      "resolveJsonModule": true,
+  },
+  "exclude": [
+      "node_modules", "dist"
+  ]
+}
