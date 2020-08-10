@@ -1,8 +1,15 @@
 import * as bodyParser from 'body-parser';
 import { map } from 'bluebird';
-import express from 'express';
+import express, {
+  Express,
+  Request,
+  Response,
+  ErrorRequestHandler,
+  NextFunction,
+} from 'express';
 import config from 'config';
 import { resolve } from 'path';
+import cors from 'cors';
 
 const COMPONENTS = [
   {
@@ -12,7 +19,7 @@ const COMPONENTS = [
 ];
 
 export class Router {
-  private _app: express.Express;
+  private _app: Express;
 
   constructor() {
     this._app = express();
@@ -30,17 +37,35 @@ export class Router {
     return routes;
   }
 
+  private _handleErrors() {
+    this._app.use(
+      (
+        err: ErrorRequestHandler,
+        req: Request,
+        res: Response,
+        next: NextFunction,
+      ) => {
+        if (res.headersSent) {
+          return next(err);
+        }
+
+        return res.status(500).send();
+      },
+    );
+  }
+
   public async initialize() {
     this._app.use(bodyParser.json({}));
     this._app.use(
       bodyParser.urlencoded({
         extended: false,
-        limit: '50mb',
         parameterLimit: 50000,
       }),
     );
+    this._app.use(cors());
 
     await this._loadAllRoutes();
+    this._handleErrors();
     const PORT = config.get('SERVER_PORT');
     return this._app.listen(PORT, () => {
       console.log(`api server listening on port: ${PORT}`);

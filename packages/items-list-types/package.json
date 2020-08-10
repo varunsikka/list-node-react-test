@@ -1,0 +1,13 @@
+{
+  "name": "@varunsikka/items-list-types",
+  "version": "0.0.1",
+  "description": "Type definitions for the application",
+  "author": "Varun Sikka <vsikka@nestwealth.com>",
+  "homepage": "https://github.com/varunsikka/list-node-react-test#readme",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varunsikka/list-node-react-test.git"
+  }
+}
