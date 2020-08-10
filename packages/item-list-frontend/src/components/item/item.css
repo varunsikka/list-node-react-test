@@ -1,0 +1,44 @@
+.item {
+  border: 1px solid #cacaca;
+  background-color: #fff;
+  min-width: 250px;
+  min-height: 40px;
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  position: relative;
+  border-radius: 4px;
+}
+
+.item textarea {
+  width: 88%;
+  border: 0;
+  top: 0;
+  margin-right: 10%;
+  resize: none;
+  outline: none;
+}
+
+.delete {
+  height: 22px;
+  width: 22px;
+  background-color: #ed2350;
+  position: absolute;
+  right: 0;
+  margin: 3px 3px 0 0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.delete:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\d7";
+  font-size: 25px;
+  color: #FFF;
+  line-height: 18px;
+  text-align: center;
+}

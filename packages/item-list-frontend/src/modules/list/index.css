@@ -1,0 +1,13 @@
+.list-module {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+}
+
+.list-content {
+  width: 75%;
+  max-width: 500px;
+}

@@ -1,0 +1,22 @@
+.add-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+  margin-top: 5%;
+}
+
+.add-item input {
+  flex-grow: 4;
+  border: 1px solid #cacaca;
+}
+
+.add-item button {
+  flex-grow: 1;
+  background-color: #ed2350;
+  color: #ffffff;
+  border-radius: 3px;
+  max-width: 50px;
+  padding: 10px;
+  margin-left: 5px;
+  border: 0;
+}

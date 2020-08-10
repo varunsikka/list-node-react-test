@@ -1,0 +1,6 @@
+.list {
+  background-color: #efefef;
+  overflow: scroll;
+  min-height: 300px;
+  max-height: 500px;
+}
