@@ -2,7 +2,10 @@
 
 ## To start the server and the client
 
+> Setup Lerna on your machine
+
 ```sh
+npm i -g lerna
 lerna run start
 ```
 
