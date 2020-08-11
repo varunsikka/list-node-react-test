@@ -1,0 +1,28 @@
+.prompt {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 280px;
+  height: auto;
+  border-radius: 5px;
+  color: #02020294;
+  padding: 20px;
+  text-align: center;
+  display: none;
+}
+
+.success {
+  background: #00ff00a6;
+}
+
+.failure {
+  background: #ff0000a6;
+}
+
+.open {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

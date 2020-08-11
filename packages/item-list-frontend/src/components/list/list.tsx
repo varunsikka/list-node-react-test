@@ -18,7 +18,6 @@ class List extends React.Component<IListProps> {
 
   render() {
     const items = this.props.items?.map((item: any, index: number) => <Item key={item._id} id={index} _id={item._id} deleteItem={this.props.deleteItem} content={item.content}></Item>);
-    console.log(this.props.items);
     return (
       <div ref={this.listBox} className="list-content list">{items}</div>
     );
