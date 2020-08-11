@@ -13,6 +13,13 @@ export class ItemSchema implements IItem {
    * @type {string}
    * @memberof ItemSchema
    */
+  _id: string;
+  /**
+   *
+   *
+   * @type {string}
+   * @memberof ItemSchema
+   */
   content: string;
 
   set item(item: string) {

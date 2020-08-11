@@ -31,9 +31,9 @@ export class ListService {
 
   public removeFromList(data: IRemoveItem): void {
     // Remove item from the list
-    const { _id, itemIndex } = data;
+    const { _id, item } = data;
     const listInstance = ListSchema.find(_id);
-    listInstance.remove(itemIndex);
+    listInstance.remove(item);
   }
 
   public getList(_id: string): IListAttributes | [] {

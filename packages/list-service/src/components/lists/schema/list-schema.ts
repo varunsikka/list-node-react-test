@@ -42,7 +42,8 @@ export class ListSchema implements IListAttributes {
   public add(attributes: IAddItem): void {
     const { item } = attributes;
     const itemSchema = new ItemSchema();
-    itemSchema.item = item;
+    itemSchema._id = item._id;
+    itemSchema.item = item.content;
     this.items.push(itemSchema);
 
     ListSchema._databaseConnection.update({
@@ -51,11 +52,11 @@ export class ListSchema implements IListAttributes {
     });
   }
 
-  public remove(index: number): void {
-    this.items.splice(index, 1);
+  public remove(_id: string): void {
+    const newItems = this.items.filter((item: IItem) => item._id != _id);
     ListSchema._databaseConnection.update({
       _id: this._id,
-      items: this.items,
+      items: newItems,
     });
   }
 

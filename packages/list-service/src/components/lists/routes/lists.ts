@@ -50,11 +50,11 @@ router.get(
 
 router.post('/:token', (req: Request, res: Response, next: NextFunction) => {
   const { token } = req.params;
-  const { item }: IAddItemRequest = req.body;
+  const { _id, content }: IAddItemRequest = req.body;
   try {
     listService.addToList({
       _id: String(token),
-      item: String(item),
+      item: { _id, content },
     });
     // Send 201 Created response
     return res.status(201).send();
@@ -70,7 +70,7 @@ router.delete(
     try {
       listService.removeFromList({
         _id: token,
-        itemIndex: parseInt(item),
+        item: item,
       });
       return res.status(202);
     } catch (err) {
