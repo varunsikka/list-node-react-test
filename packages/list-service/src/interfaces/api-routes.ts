@@ -46,10 +46,11 @@ export class Router {
         next: NextFunction,
       ) => {
         if (res.headersSent) {
+          console.log(err);
           return next(err);
         }
-
-        return res.status(500).send();
+        console.log(err);
+        return res.status(500).send(err);
       },
     );
   }

@@ -60,6 +60,17 @@ export class ListSchema implements IListAttributes {
     });
   }
 
+  public update(_id: string, content: string): void {
+    const itemIndexToUpdate = this.items.findIndex(
+      (item: IItem) => item._id === _id,
+    );
+    this.items[itemIndexToUpdate].content = content;
+    ListSchema._databaseConnection.update({
+      _id: this._id,
+      items: this.items,
+    });
+  }
+
   public reset(): void {
     this.items = [];
     ListSchema._databaseConnection.update({

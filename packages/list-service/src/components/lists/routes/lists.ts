@@ -1,7 +1,11 @@
 import { Router, NextFunction, Request, Response } from 'express';
 
 import { ListService } from 'src/components/lists/list-service';
-import { IListAttributes, IAddItemRequest } from '@varunsikka/items-list-types';
+import {
+  IListAttributes,
+  IAddItemRequest,
+  IUpdateItemRequest,
+} from '@varunsikka/items-list-types';
 import { ListSchema } from '../schema/list-schema';
 import { DataStore } from 'src/adapters/datastore';
 
@@ -63,6 +67,27 @@ router.post('/:token', (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+router.patch(
+  '/:token/:item',
+  (req: Request, res: Response, next: NextFunction) => {
+    const { token, item: itemId } = req.params;
+    const { content }: IUpdateItemRequest = req.body;
+    try {
+      listService.updateItem({
+        _id: token,
+        item: {
+          _id: itemId,
+          content,
+        },
+      });
+      // Send 202 Accepted response
+      return res.status(202).send();
+    } catch (err) {
+      next(err);
+    }
+  },
+);
+
 router.delete(
   '/:token/:item',
   (req: Request, res: Response, next: NextFunction) => {
@@ -72,7 +97,7 @@ router.delete(
         _id: token,
         item: item,
       });
-      return res.status(202);
+      return res.status(202).send();
     } catch (err) {
       next(err);
     }
@@ -83,7 +108,7 @@ router.delete('/:token', (req: Request, res: Response, next: NextFunction) => {
   const { token } = req.params;
   try {
     listService.resetList(token);
-    return res.status(202);
+    return res.status(202).send();
   } catch (err) {
     next(err);
   }

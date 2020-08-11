@@ -2,6 +2,7 @@ import {
   IListAttributes,
   IRemoveItem,
   IAddItem,
+  IUpdateItem,
 } from '@varunsikka/items-list-types';
 import { ListSchema } from './schema/list-schema';
 
@@ -34,6 +35,13 @@ export class ListService {
     const { _id, item } = data;
     const listInstance = ListSchema.find(_id);
     listInstance.remove(item);
+  }
+
+  public updateItem(data: IUpdateItem): void {
+    // Remove item from the list
+    const { _id, item } = data;
+    const listInstance = ListSchema.find(_id);
+    listInstance.update(item._id, item.content);
   }
 
   public getList(_id: string): IListAttributes | [] {
