@@ -54,3 +54,38 @@ Request
 
 Response
 > Success Response: 201 Created
+
+```http
+DELETE /list/:token/:item
+```
+
+Description
+> Delete an item from the list
+
+Response
+> Success Response: 202 Accepted
+
+```http
+DELETE /list/:token
+```
+
+Description
+> Reset a list
+
+Response
+> Success Response: 202 Accepted
+
+```http
+PATCH /list/:token/:item
+```
+
+Description
+> Update an item in the list
+
+Request
+> {
+> "content": "This is item 2.1"
+> }
+
+Response
+> Success Response: 202 Accepted
