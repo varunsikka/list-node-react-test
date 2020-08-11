@@ -57,7 +57,6 @@ class Item extends Component<IItemProps, IItemState> {
         className="delete"
       ></span>
       <span className={this.state.status === IItemStatus.Pending ? 'pending show' : 'pending hide'}></span>
-      {this.props._id} - {this.props.status.toString()}
     </div>;
   }
 }
