@@ -42,3 +42,31 @@
   line-height: 18px;
   text-align: center;
 }
+
+.pending {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: -25px;
+  margin: 3px 3px 0 0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.pending::after {
+  font-family: Lucida Sans Unicode;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\26E2";
+  font-size: 25px;
+  color: #f3a30e;
+  line-height: 18px;
+  text-align: center;
+}
+
+.pending.hide {
+  display: none;
+}
