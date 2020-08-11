@@ -1,3 +1,4 @@
 export interface IAddItemRequest {
-  item: string;
+  _id: string;
+  content: string;
 }
