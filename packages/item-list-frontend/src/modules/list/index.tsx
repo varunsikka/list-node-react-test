@@ -44,17 +44,23 @@ class ListModule extends React.Component<IListAttributes, IListModuleState> {
   async componentWillMount() {
     const { data }: { data: IListAttributes } =
       await axios.get(`${BACKEND}/lists/${this.props._id}`);
+    
+    if (data._id) {
+      this.showPrompt('list loaded successfully', 'success');
+    } else {
+      this.showPrompt('new list created successfully', 'success');
+    }
     const serverList = {
-      _id: data._id,
-      items: data.items
+      _id: data._id || this.props._id,
+      items: data.items || []
     };
     this.setState({ list: serverList });
-    this.showPrompt('list loaded successfully', 'success');
   }
 
   async addItem(content: string) {
     const list = this.state.list;
     const newId = uuidv4();
+    console.log(list?.items);
     if (list?.items) {
       list?.items.push({
         _id: newId,

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ListModule from './modules/list';
 import * as serviceWorker from './serviceWorker';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ListModule _id="1234" />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
