@@ -8,6 +8,7 @@
 .add-item input {
   flex-grow: 4;
   border: 1px solid #cacaca;
+  outline: none;
 }
 
 .add-item button {
@@ -19,4 +20,5 @@
   padding: 10px;
   margin-left: 5px;
   border: 0;
+  outline: none;
 }
