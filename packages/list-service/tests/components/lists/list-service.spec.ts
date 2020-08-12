@@ -39,7 +39,6 @@ const _databaseConnection: DataStore<IListAttributes> = new DataStore<
 >();
 
 let dependenciesListSchemaFindStub: stub;
-console.log(ListSchema._databaseConnection);
 describe('list-service', () => {
   beforeEach(() => {
     // Stub database connection
