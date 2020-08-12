@@ -110,4 +110,7 @@ To view the code coverage, go to the Root folder and open the file packages/list
 
 Deployment using Docker:
 
-> To Do: Add dockerfile for building docker image
+```sh
+docker build --tags list-node-react-test
+docker run -p 3001:3001 -p 3000:3000 list-node-react-test
+```
