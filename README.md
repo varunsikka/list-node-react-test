@@ -92,3 +92,22 @@ Request
 
 Response
 > Success Response: 202 Accepted
+
+## Tests
+
+To run the unit tests on the backend (list-service):
+
+```bash
+lerna run test --scope @varunsikka/list-service
+```
+
+### Code Coverage
+
+Running the above tests will generate the code coverage for the backend tests
+To view the code coverage, go to the Root folder and open the file packages/list-service/coverage/index.html
+
+## Deployment
+
+Deployment using Docker:
+
+> To Do: Add dockerfile for building docker image
